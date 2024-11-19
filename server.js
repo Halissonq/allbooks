@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 const jsonServer = require('json-server')
 const jwt = require('jsonwebtoken')
 
+
+
 const server = jsonServer.create()
 const router = jsonServer.router('./database.json')
 let userdb = JSON.parse(fs.readFileSync('./usuarios.json', 'UTF-8'))
