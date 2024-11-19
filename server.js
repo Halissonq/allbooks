@@ -20,21 +20,9 @@ function createToken(payload, expiresIn = '12h') {
   return jwt.sign(payload, SECRET_KEY, { expiresIn })
 }
 
-
-
-
-
-
-
-
-
-
 function verifyToken(token) {
   return jwt.verify(token, SECRET_KEY, (err, decode) => decode !== undefined ? decode : err)
 }
-
-
-
 
 function usuarioExiste({ email, senha }) {
   return userdb.usuarios.findIndex(user => user.email === email && user.senha === senha) !== -1
